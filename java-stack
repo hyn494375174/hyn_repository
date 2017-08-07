@@ -1,0 +1,51 @@
+/**
+*	作者：新月微光
+*	更新时间：2017/08/05
+*	代码分类：数据结构
+*	数据结构：栈（数组）
+*/
+
+/**
+*	public MyStack()		//默认构造函数，默认初始大小为10
+*	public MyStack(int maxsize)	//带参数构造方法，参数为数组初始化大小.
+*	public void push(int value)	//添加顶层数据。
+*	public long pop()		//移除顶层数据
+*	public long peek()		//查看最顶层数据
+*	public boolean isEmpty()	//判断栈是否为空
+*	public boolean isFull()		//判断栈是否已满
+*/
+
+public class MyStack {
+	private long[] arr;		//底层实现是一个数组
+	private int top;		//顶层指针
+	
+	public MyStack() {			//默认构造函数，默认初始大小为10
+		arr = new long[10];
+		top = -1;
+	}
+	
+	public MyStack(int maxsize) {		//带参数构造方法，参数为数组初始化大小.
+		arr = new long[maxsize];
+		top = -1;
+	}
+	
+	public void push(int value) {		//添加顶层数据。
+		arr[++top] = value;
+	}
+	
+	public long pop() {			//移除顶层数据
+		return arr[top--];
+	}
+	
+	public long peek() {			//查看最顶层数据
+		return arr[top];
+	}
+
+	public boolean isEmpty() {		//判断栈是否为空
+		return top == -1;
+	}
+	
+	public boolean isFull() {		//判断栈是否已满
+		return top == arr.length - 1;
+	}
+}
